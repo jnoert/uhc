@@ -1,26 +1,74 @@
 Legend
-Team: Team
-Season: Season
-GP: Games Played
-W: Wins
-L: Losses
-OT: Overtime Losses
-P: Points
-P%: Point Pctg
-RW: Regulation Wins (a Standings tiebreaker since 2019-20)
-ROW: Regulation Plus Overtime Wins (a Standings tiebreaker since 2010-11)
-S/O Win: Shootout Games Won (since 2005-06)
-GF: Goals For
-GA: Goals Against
-GF/GP: Goals For Per Game Played
-GA/GP: Goals Against Per Game Played
-PP%: Power Play Percentage
-PK%: Penalty Kill Percentage
-Net PP%: Power Play Net Pct
-Net PK%: Penalty Kill Net Pct
-Shots/GP: Shots For per Game
-SA/GP: Shots Against per Game
-FOW%: Face-off Win Percentage 
+General Terms   Description
+gp	Number of games played
+w	Wins
+l	Losses
+ot	Overtime Losses
+p	Points
+p%	Point Percentage
+rw	Regulation Wins
+row	Regulation plus Overtime Wins
+s/o win	Shootout Wins
+gf	Goals For
+ga	Goals Against
+gf/gp	Goals For Per Game Played
+ga/gp	Goals Against Per Game Played
+pp%	Power Play Percentage
+pk%	PK%: Penalty Kill Percentage
+net pp%	Net PP%: Power Play Net Pct
+net pk%	Net PK%: Penalty Kill Net Pct
+shots/gp	Shots/GP: Shots For per Game
+sa/gp	SA/GP: Shots Against per Game
+fow%	FOW%: Face-off Win Percentage
+xGoalsPercentage	xGoals For / (xGoals For + xGoals Against)
+corsiPercentage	Shot Attempts For / (Shot Attempts For + Shot Attempts Against)
+fenwickPercentage	Unblocked Shot Attempts For / (Unlbocked Shot Attempts For + Unbloked Shot Attempts Against)
+iceTime	Ice time in seconds
+xOnGoalFor	Expected number of unblocked shot attempts that are expected to be a shot on goal (not miss the net) given the context (distance, situation, etc) they were taken from. This assumes the player has average shooting talent.
+xGoalsFor	Expected Goals. "The sum of the probabilities of unblocked shot attempts being goals. For example, a rebound shot in the slot may be worth 0.5 expected goals, while a shot from the blueline while short handed may be worth 0.01 expected goals. The expected value of each shot attempt is calculated by the MoneyPuck Expected Goals model. Expected goals is commonly abbreviated as ""xGoals"". Blocked shot attempts are valued at 0 xGoals. See more here: http://moneypuck.com/about.htm#shotModel"
+xReboundsFor	Expected Rebounds. The expected number of rebound shots generated from the player's unblocked shot attempts.
+xFreezeFor	Expected puck freezes after shots. The expected number of puck freezes by the goalie after the player's unblocked shot attempts.
+xPlayStoppedFor	Expected number of times the play is stopped after shots for reasons other than the goalie freezing the puck, such as the puck going over the glass or a dislodged net.
+xPlayContinuedInZoneFor	Expected number of times the play continues in the offensive zone after the player's shot besides an immediate rebound shot. This is proxied by another event happening in the zone after the shot (such as a hit, takeaway, etc) without any events outside of the zone happening inbetween and all the same players for both teams are still on the ice as they were for the original shot
+xPlayContinuedOutsideZoneFor	Expected number of times the play goes outside the offensive zone after the player's shot.
+flurryAdjustedxGoalsFor	Flurry Adjusted Expected Goals. See 'General Concepts' tab for more info.
+scoreVenueAdjustedxGoalsFor	Score and Venue Adjusted xGoals. Gives more credit to away teams and teams with large leads when they get an xGoal.
+flurryScoreVenueAdjustedxGoalsFor	Fluury and Score and Venued Adjusted xGoals
+shotsOnGoalFor	Shots on goal. Does not include shots that miss the net or blocked shots
+missedShotsFor	Missed shots. Shots that aren't blocked but don't hit the net
+blockedShotAttemptsFor	Blocked shot attempts. The numbe of shot attempts a player has taken that were blocked by the opponent's team
+shotAttemptsFor	Shot attempts. Includes shots on goal, missed shots, and blocked shot attempts
+goalsFor	Goals
+reboundsFor	Rebound shot attempts. These must occur within 3 seconds of a previous shot.
+reboundGoalsFor	Goals from rebound shot attempts
+freezeFor	Puck freezes after a player's shots. The  number of puck freezes by  goalies after the player's unblocked shot attempts.
+playStoppedFor	Number of times the play is stopped after shots for reasons other than the goalie freezing the puck, such as the puck going over the glass or a dislodged net.
+playContinuedInZoneFor	Number of times the play continues in the offensive zone after the player's shot besides an immediate rebound shot. This is proxied by another event happening in the zone after the shot (such as a hit, takeaway, etc) without any events outside of the zone happening inbetween and all the same players for both teams are still on the ice as they were for the original shot
+playContinuedOutsideZoneFor	Number of times the play goes outside the offensive zone after the player's shot.
+savedShotsOnGoalFor	Number of the player's unblocked shots that were saved by the goalie
+savedUnblockedShotAttemptsFor	Number of the player's unblocked shots that were saved by the goalie or missed the net
+penaltiesFor	Number of penalties the player has received. Both majors and minors both count as '1'
+penalityMinutesFor	Number of penalty minutes the player has received
+faceOffsWonFor	Number of faceoffs the player has won
+hitsFor	Number of hits the player has given
+takeawaysFor	Number of takeaways the player has taken from opponents
+giveawaysFor	Number of giveaways the player has given to other team
+lowDangerShotsFor	Low danger shots (<8% xGoal value)
+mediumDangerShotsFor	Medium danger shots (Between 8% and 20% xGoal Value)
+highDangerShotsFor	High Danger Shots (Higher than 20% xGoal Value)
+lowDangerxGoalsFor	Sum of expected goals from low danger shots
+mediumDangerxGoalsFor	Sum of expected goals from medium danger shots
+highDangerxGoalsFor	Sum of expected goals from high danger shots
+lowDangerGoalsFor	Goals from low danger shots
+mediumDangerGoalsFor	Goals from medium danger shots
+highDangerGoalsFor	Goals from high danger shots
+scoreAdjustedShotsAttemptsFor	Shot attempts adjusted for score and venue
+unblockedShotAttemptsFor	All shot attempts that weren't blocked
+scoreAdjustedUnblockedShotAttemptsFor	Unblocked shot attempts adjusted for score and venue
+dZoneGiveawaysFor	Giveaways in the team's defensive zone
+xGoalsFromxReboundsOfShotsFor	Expected Goals from Expected Rebounds of player's shots. Even if a shot does not actually generate a rebound, if it's a shot that is likely to generate a rebound the player is credited with xGoalsFromxRebounds
+xGoalsFromActualReboundsOfShotsFor	Expected Goals from actual rebounds shots of player's shots.
+reboundxGoalsFor	Expected Goal on rebound shots
 
 *****MoneyPuck.com Player and Team Data******,
 ,
