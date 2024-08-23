@@ -1,5 +1,8 @@
 Legend
+
 General Terms   Description
+team    Team Name
+season  Starting year of the season. For example 2018 for the 2018-2019 season
 gp	Number of games played
 w	Wins
 l	Losses
